@@ -71,33 +71,8 @@
     			error:e=>{alert('에러 발생')}
     		})
     	})
-    	$('#updatePlace').click(e=>{
-    		$('#updatePlace').text('')
-    		$('#name').html('<input id="updateName" value="'+$('#name').text()+'">')
-    		$('#address').html('<input id="updateAddress" value="'+$('#address').text()+'">')
-    		$('#phoneNumber').html('<input id="updatePhoneNumber" value="'+$('#phoneNumber').text()+'">')
-    		$('#category').html('<input id="updateCategory" value="'+$('#category').text()+'">')
-    		$('#city').html('<input id="updateCity" value="'+$('#city').text()+'">')
-    		$('#toggle').html('<button id="update-btn">수정하기</button>')
-    		$('#update-btn').click(e=>{
-	    		$.ajax({
-	    			url:'/gwland/place',
-	    			type:'PUT',
-	    			data:JSON.stringify({
-	    				pceNum:localStorage.getItem('pceNum'),
-	    				name:$('#updateName').val(),
-	    				address:$('#updateAddress').val(),
-	    				phoneNumber:$('#updatePhoneNumber').val(),
-	    				category:$('#updateCategory').val(),
-	    				city:$('#updateCity').val()
-	    			}),
-	    			dataType:'json',
-	    			contentType:'application/json',
-	    			success:d=>{},
-	    			error:e=>{alert('에러 발생')}
-	    		})
-    		})
-    	})
+    	pce.update(localStorage.getItem('pceNum'))
+    	
     	
     </script>
 </body>
