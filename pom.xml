@@ -19,6 +19,7 @@
 		<javax.servlet-jstl-version>1.2</javax.servlet-jstl-version>
 		<junit-version>4.7</junit-version>
 		<lombok-version>1.18.18</lombok-version>
+		<org.apache.tiles-version>3.0.8</org.apache.tiles-version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -164,6 +165,31 @@
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.12.1</version>
+		</dependency>
+		
+		<!-- Tiles -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${org.apache.tiles-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>${org.apache.tiles-version}</version>
+		</dependency>
+		
+		<dependency>
+		          <groupId>org.apache.tiles</groupId>
+		          <artifactId>tiles-jsp</artifactId>
+		          <version>${org.apache.tiles-version}</version>
+		      </dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+			<version>${org.apache.tiles-version}</version>
 		</dependency>
 	</dependencies>
     <build>

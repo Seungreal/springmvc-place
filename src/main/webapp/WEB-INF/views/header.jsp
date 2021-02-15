@@ -1,16 +1,9 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-	<title>강원랜드</title>
-	<link rel="stylesheet" href="<c:url value="/resources/cmm/css/style.css"/>" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<body>
-	<div id="header">
-		<div>
-			<a href="#" class="home">강원랜드</a>
+<div id="header">
+	<div>
+		<a href="#" class="home">강원랜드</a>
 			<ul id="navigation">
 				<li class="menu">
 					<a href="#">메뉴1</a>
@@ -38,12 +31,9 @@
 					<a href="#">메뉴4</a>
 				</li>
 			</ul>
-		</div>
-
 	</div>
-	<script>
-		$('.home').click(e=>{location.href='/gwland'})
-		$('#listPlace').click(e=>{location.href='/gwland/pce/listPlace'})
-	</script>
-</body>
-</html>
+</div>
+<script>
+	$('.home').click(function(){location.href='/gwland'})
+	$('#listPlace').click(function(){location.href='/gwland/pce/listPlace'})
+</script>

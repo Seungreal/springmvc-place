@@ -35,12 +35,12 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "public";
 	}
 	
 	@GetMapping("/{dir}/{page}")
 	public String move(@PathVariable String dir,@PathVariable String page) {
-		return dir+"/"+page;
+		return dir+":"+page;
 	}
 	
 }

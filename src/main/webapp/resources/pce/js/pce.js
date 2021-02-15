@@ -1,5 +1,30 @@
 var pce = pce || {}
 
+pce.add=()=>{
+	$('#add-btn').click(e=>{
+    		e.preventDefault()
+    		$.ajax({
+    			url:'/gwland/place',
+    			type:'POST',
+    			data:JSON.stringify({
+    				name:$('#placeName').val(),
+    				address:$('#placeAddress').val(),
+    				phoneNumber:$('#placePhoneNumber').val(),
+    				category:$('#placeCategory').val(),
+    				city:$('#placeCity').val(),
+    				placeImg:$('#placeImage').val()
+    			}),
+    			dataType:'json',
+    			contentType:'application/json',
+    			success:d=>{
+					alert(d.message)
+					location.href='/gwland/pce/listPlace'
+				},
+    			error:e=>{alert('에러 발생')}
+    		})
+    	})
+}
+
 pce.list=x=>{
 	$.getJSON(`/gwland/place/${x.size}/${x.num}`,d=>{
 		$('<ul/>')
