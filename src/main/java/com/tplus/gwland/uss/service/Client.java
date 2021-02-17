@@ -5,11 +5,7 @@ import lombok.Data;
 @Data
 public class Client {
 	public int cliNum; 
-	public String cliId;
-	public String name;
-	public String gender;
-	public int phoneNum;
-	public int regDate;
+	public String cliId, name, gender, phoneNum, regDate;
 }
 
 /* create table Client(

@@ -1,16 +1,16 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/gwland/resources/cli/js/client.js"></script>
 <meta charset="UTF-8">
-
+<title>Insert title here</title>
 </head>
 <body>
-<h2>고객 목록 </h2>
-<table id="client-list">
+<h3>고객 상세 목록</h3>
+<table id="client-detail">
  <thead>
   <tr>
    <th>고객번호&nbsp;</th>
@@ -24,15 +24,24 @@
 </table>
 
 <script>
-	client.list()
+	client.detail()
 </script>
 
-  <h5 style="color:#CD5C5C">&nbsp;&nbsp;&nbsp;&nbsp;※고객아이디를 누르면 상세페이지로 넘어갑니다.</h5>
-
- <p>
 <input type="button" value="돌아가기" onclick="history.back(-1)">
 <button type="button" onclick="location.href='http://localhost:8081/gwland/' ">홈으로</button>
-</p>
+<button id='update-btn'> 회원정보 수정</button>
+<button id='delete-btn'> 회원정보 삭제</button>
+
+
+
+<script>
+client.delete()
+</script>
+<script>
+$(`#update-btn`).click(function(){
+	   location.href=`update`})
+</script>
+
 
 </body>
 </html>

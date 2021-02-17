@@ -4,21 +4,37 @@
 	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	 
 <mapper namespace="com.tplus.gwland.uss.service.ClientMapper">
-    <!-- 고객입력 -->
+    <!-- 고객데이터 입력 -->
 	<insert id="insert" parameterType="com.tplus.gwland.uss.service.Client">
 		insert into Client(cli_id, name, gender, phone_num, reg_date) 
 				   values (#{cliId},#{name},#{gender},#{phoneNum},#{regDate})
 	</insert>
 	
-	<!-- 고객목록 -->
+	<!-- 고객데이터 목록 -->
 	<select id="list" resultType="com.tplus.gwland.uss.service.Client">
 		 select cli_num cliNum, cli_id cliId, name, gender, phone_num phoneNum, reg_date regDate
 			 from Client
 	</select>
 	
-	<!-- 고객 데이터 삭제 -->
-	<delete id="remove" parameterType="com.tplus.gwland.uss.service.Client" >
+	<!-- 고객데이터 상세목록 -->
+	<select id="detail" resultType="com.tplus.gwland.uss.service.Client">
+		select cli_num cliNum, cli_id cliId, name, gender, phone_num phoneNum, reg_date regDate
+			from Client where cli_id like #{value}
+	</select>
+	
+	<!-- 고객데이터 삭제 -->
+	<delete id="delete" parameterType="com.tplus.gwland.uss.service.Client">
 		delete from Client
 		where cli_num like #{cliNum}
 	</delete>
+	
+	<!-- 고객데이터 수정 -->
+	<update id = "update" parameterType="com.tplus.gwland.uss.service.Client">
+		update Client set name = #{name}, gender = #{gender}, phone_num = #{phoneNum},
+						  reg_date = #{regDate}
+		where cli_num like #{cliNum} 
+	</update>
+			
+	
+	
 </mapper>
